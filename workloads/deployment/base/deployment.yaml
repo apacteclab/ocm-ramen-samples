@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: busybox
+  name: funnybox
 spec:
   replicas: 1
   selector:
     matchLabels:
-      appname: busybox
+      appname: funnybox
   template:
     metadata:
       labels:
-        appname: busybox
+        appname: funnybox
     spec:
       containers:
         - name: logger
-          image: quay.io/nirsof/busybox:stable
+          image: quay.io/nirsof/funnybox:stable
           imagePullPolicy: IfNotPresent
           command:
             - sh
@@ -37,4 +37,4 @@ spec:
       volumes:
         - name: varlog
           persistentVolumeClaim:
-            claimName: busybox-pvc
+            claimName: funnybox-pvc
