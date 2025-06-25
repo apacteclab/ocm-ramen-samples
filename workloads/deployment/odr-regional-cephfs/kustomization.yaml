@@ -5,7 +5,7 @@ patches:
   # Customize for internal cephfs storage.
   - target:
       kind: PersistentVolumeClaim
-      name: busybox-pvc
+      name: funnybox-pvc
     patch: |-
       - op: replace
         path: /spec/storageClassName
